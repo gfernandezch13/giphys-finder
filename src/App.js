@@ -1,23 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
+import HeaderComponent from './components/HeaderComponent';
+import FilterContainer from './containers/FilterContainer';
+import ResultContainer from './containers/ResultContainer';
+import { useContext, useEffect } from 'react';
+import GifContext from './context/Gif/GifContext';
+import { ThemeContext } from './context/ThemeContext';
 
 function App() {
+  const { getGifsTrending } = useContext(GifContext);
+  const { theme } = useContext(ThemeContext);
+
+  useEffect(() => {
+    getGifsTrending();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div
+      className="App flex flex-direction align-items-center"
+      style={{ background: theme.background }}
+    >
+      <div className="container">
+        <HeaderComponent />
+        <FilterContainer />
+        <ResultContainer />
+      </div>
     </div>
   );
 }

@@ -3,10 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import GifProvider from './context/Gif/GifProvider';
+import { ThemeProvider } from './context/ThemeContext';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ThemeProvider>
+      <GifProvider>
+        <App />
+      </GifProvider>
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
