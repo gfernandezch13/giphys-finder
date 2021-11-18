@@ -35,6 +35,7 @@ const FilterContainer = () => {
   useEffect(() => {
     setSelectGif(searchTerm);
     getGifsSearch(searchTerm);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchTerm]);
 
   return (

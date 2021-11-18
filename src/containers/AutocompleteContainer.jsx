@@ -8,6 +8,7 @@ const AutocompleteContainer = ({ valueInput, handleOnClickAutocomplete }) => {
 
   useEffect(() => {
     getGifsAutocomplete(valueInput);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [valueInput]);
 
   return (
