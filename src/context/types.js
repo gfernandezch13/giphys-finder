@@ -1,0 +1,4 @@
+export const GET_GIFSLIST = 'GET_GIFSLIST';
+export const GET_GIFSLISTAUTO = 'GET_GIFSLISTAUTO';
+export const SET_SELECTGIF = 'SET_SELECTGIF';
+export const SET_THEME = 'SET_THEME';
